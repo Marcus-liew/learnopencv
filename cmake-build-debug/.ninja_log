@@ -1,0 +1,16 @@
+# ninja log v5
+28	3329	1642258723000000000	CMakeFiles/learnopencv.dir/main.cpp.o	df3d769f659321fd
+8	4116	1642259600000000000	CMakeFiles/learnopencv.dir/quickdemo.cpp.o	ebefd0f551dcb6e4
+4117	4259	1642259600000000000	learnopencv	c8c35ce6a2f614a3
+5	3703	1642261146000000000	CMakeFiles/learnopencv.dir/quickdemo.cpp.o	ebefd0f551dcb6e4
+4	3704	1642261146000000000	CMakeFiles/learnopencv.dir/main.cpp.o	df3d769f659321fd
+3704	3875	1642261146000000000	learnopencv	c8c35ce6a2f614a3
+5	3278	1642261300000000000	CMakeFiles/learnopencv.dir/main.cpp.o	df3d769f659321fd
+3279	3399	1642261300000000000	learnopencv	c8c35ce6a2f614a3
+361	4427	1642261485000000000	CMakeFiles/learnopencv.dir/main.cpp.o	df3d769f659321fd
+362	4478	1642261485000000000	CMakeFiles/learnopencv.dir/quickdemo.cpp.o	ebefd0f551dcb6e4
+4478	4689	1642261485000000000	learnopencv	c8c35ce6a2f614a3
+9	3236	1642261670000000000	CMakeFiles/learnopencv.dir/quickdemo.cpp.o	ebefd0f551dcb6e4
+3236	3354	1642261670000000000	learnopencv	c8c35ce6a2f614a3
+5	3099	1642261740000000000	CMakeFiles/learnopencv.dir/quickdemo.cpp.o	ebefd0f551dcb6e4
+3099	3451	1642261740000000000	learnopencv	c8c35ce6a2f614a3

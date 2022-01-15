@@ -1,0 +1,3 @@
+/Volumes/HDD/code/learnopencv/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Volumes/HDD/code/learnopencv/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Volumes/HDD/code/learnopencv/cmake-build-debug/CMakeFiles/learnopencv.dir
