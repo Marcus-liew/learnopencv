@@ -10,8 +10,12 @@ using namespace cv;
 
 class QuickDemo{
  public:
+  // ------ 转换颜色空间 ------
   static void color_space_demo(Mat &image);
+  // ------ 创建图像 ------
   static void mat_creation_demo(Mat &image);
+  // ------ 像素读写 ------
+  static void pixel_visit_demo(Mat &image);
 };
 
 
