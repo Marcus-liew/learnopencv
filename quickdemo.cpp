@@ -23,9 +23,6 @@ void QuickDemo::color_space_demo(Mat &image){
   imwrite("/Users/apple/Desktop/bgr2hsv.png", hsv);
   imwrite("/Users/apple/Desktop/bgr2gray.png", gray);
   imwrite("/Users/apple/Desktop/bgr.png", image);
-
-  waitKey(0);
-  destroyAllWindows();
 }
 
 // ------ 创建图像 ------
@@ -53,9 +50,6 @@ void QuickDemo::mat_creation_demo(Mat &image) {
   imshow("m3", m3);
   imshow("m4", m4);
   imshow("kernel", kernel);
-
-  waitKey(0);
-  destroyAllWindows();
 }
 
 // ------ 像素读写 ------
@@ -98,8 +92,6 @@ void QuickDemo::pixel_visit_demo(Mat &image) {
 
   imshow("image", image);
   //imwrite("/Users/apple/Desktop/result.png", image);
-  waitKey(0);
-  destroyAllWindows();
 
 }
 
@@ -117,10 +109,6 @@ void QuickDemo::operation_demo(Mat &image) {
   imshow("dst_subtract", dst_subtract);
   imshow("dst_multiply", dst_multiply);
   imshow("dst_divide", dst_divide);
-
-  waitKey(0);
-  destroyAllWindows();
-
 }
 
 // ------ 像素操作(利用opencv api) ------
@@ -150,9 +138,6 @@ void QuickDemo::operation_opencv_api_demo(Mat &image) {
   imshow("subtract", dst_subtract);
   imshow("multiply", dst_multiply);
   imshow("divide", dst_divide);
-
-  waitKey(0);
-  destroyAllWindows();
 }
 
 // ------ 通过滚动条实现调整图像亮度 对比度的调整 ------
@@ -179,7 +164,7 @@ static void on_contrast(int b, void* userdata){
   //imshow("original", image);
   imshow("亮度与对比度调整", dst);
 }
-// ------ Track Bar ------
+// ------ 创建Track Bar函数 ------
 void QuickDemo::tracking_bar_demo(Mat &image){
   namedWindow("亮度与对比度调整", WINDOW_AUTOSIZE);
   int lightness = 50;
