@@ -154,3 +154,29 @@ void QuickDemo::operation_opencv_api_demo(Mat &image) {
   waitKey(0);
   destroyAllWindows();
 }
+
+// ------ 通过滚动条实现调整图像亮度，采用tracking bar ------
+// ------ 回调函数 ------
+Mat m, dst, tmp;
+int lightness = 50;
+static void on_track(int, void*){
+  m = Scalar(lightness, lightness, lightness);
+  add(tmp, m, dst);
+  imshow("original", tmp);
+  imshow("亮度调整", dst);
+
+  waitKey(0);
+  destroyAllWindows();
+}
+
+void QuickDemo::tracking_bar_demo(Mat &image){
+  namedWindow("亮度调整", WINDOW_AUTOSIZE);
+  dst = Mat::zeros(image.size(), image.type());
+  m = Mat::zeros(image.size(), image.type());
+  tmp = image;
+  //int max_value = 100;
+
+  createTrackbar("lightness_bar", "亮度调整", &lightness, 100, on_track);
+  //setTrackbarPos("lightness_bar", "亮度调整", lightness);
+  on_track(50, 0);
+}

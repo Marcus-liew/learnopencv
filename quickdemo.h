@@ -20,7 +20,8 @@ class QuickDemo{
   static void operation_demo(Mat &image);
   // ------ 像素操作(利用opencv api) ------
   static void operation_opencv_api_demo(Mat &image);
-
+  // ------ 通过滚动条实现调整图像亮度，采用tracking bar ------
+  static void tracking_bar_demo(Mat &image);
 };
 
 
