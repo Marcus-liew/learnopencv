@@ -18,6 +18,9 @@ class QuickDemo{
   static void pixel_visit_demo(Mat &image);
   // ------ 像素操作 ------
   static void operation_demo(Mat &image);
+  // ------ 像素操作(利用opencv api) ------
+  static void operation_opencv_api_demo(Mat &image);
+
 };
 
 

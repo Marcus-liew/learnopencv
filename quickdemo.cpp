@@ -103,31 +103,54 @@ void QuickDemo::pixel_visit_demo(Mat &image) {
 
 }
 
-// ------ 像素操作 ------
+// ------ 像素操作（不用OPENCV API） ------
 void QuickDemo::operation_demo(Mat &image) {
-  Mat dst_add, dst_subtract, dst_multiply, dst_divide, dst_image1, dst_image2;
+  Mat dst_add, dst_subtract, dst_multiply, dst_divide;
   // ------ 操作（1）加/减/乘/除 ------
   dst_add = image + Scalar(50,50,50);
   dst_subtract = image - Scalar(50,50,50);
   dst_multiply = image * 3.6; //注意乘法不要用Scalar函数，直接乘数字
   dst_divide = image / 4;     //注意除法不要用Scalar函数，直接除数字
 
-  // ------ 利用内部函数multiply，让数两张图片相乘，或同一个图片自己乘自己 ------
-  multiply(image, image, dst_image1);
-  // ------ 利用内部函数multiply，让数两张图片相乘，或同一个图片自己乘自己 ------
-  Mat image2 = Mat::zeros(image.size(), image.type());
-  image2 = Scalar(2,2,2);
-  multiply(image, image2, dst_image2);
-
   // ------ 输出 ------
   imshow("dst_plus", dst_add);
   imshow("dst_subtract", dst_subtract);
   imshow("dst_multiply", dst_multiply);
   imshow("dst_divide", dst_divide);
-  imshow("dst_image1", dst_image1);
-  imshow("dst_image2", dst_image2);
 
   waitKey(0);
   destroyAllWindows();
 
+}
+
+// ------ 像素操作(利用opencv api) ------
+void QuickDemo::operation_opencv_api_demo(Mat &image) {
+  Mat dst_add, dst_subtract, dst_multiply, dst_divide;
+  Mat tmp = Mat::zeros(image.size(), image.type());
+
+  // ------ 利用opencv api add()，实现像素相加 ------
+  tmp = Scalar(50,50,50);
+  add(image, tmp, dst_add);
+
+  // ------ 利用opencv api subtract()，实现像素相减 ------
+  tmp = Scalar(50,50,50);
+  subtract(image, tmp, dst_subtract);
+
+  // ------ 利用opencv api multiply()，实现像素相减 ------
+  tmp = Scalar(2, 2, 2);
+  multiply(image, tmp, dst_multiply);
+
+  // ------ 利用opencv api divide()，实现像素相减 ------
+  tmp = Scalar(4, 4, 4);
+  divide(image, tmp, dst_divide);
+
+  // ------ 显示图片 ------
+  imshow("origin", image);
+  imshow("add", dst_add);
+  imshow("subtract", dst_subtract);
+  imshow("multiply", dst_multiply);
+  imshow("divide", dst_divide);
+
+  waitKey(0);
+  destroyAllWindows();
 }

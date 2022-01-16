@@ -4,7 +4,7 @@
 using namespace std;
 using namespace cv;
 
-int main(int argc, char** argv) {
+int main(int argc, char* argv[]) {
   Mat src = imread("/Users/apple/Downloads/111.png");
   if (src.empty()){
     cout << "could not open image..." << endl;
@@ -24,7 +24,8 @@ int main(int argc, char** argv) {
   // ------ 调用读写像素成员函数 ------
   //qd.pixel_visit_demo(src);
   // ------ 调用操作像素成员函数 ------
-  qd.operation_demo(src);
-
+  //qd.operation_demo(src);
+  // ------ 调用操作像素opencv api函数 ------
+  qd.operation_opencv_api_demo(src);
   return 0;
 }
