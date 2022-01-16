@@ -10,7 +10,8 @@ using namespace cv;
 
 class QuickDemo{
  public:
-  void color_space_demo(Mat &image);
+  static void color_space_demo(Mat &image);
+  static void mat_creation_demo(Mat &image);
 };
 
 

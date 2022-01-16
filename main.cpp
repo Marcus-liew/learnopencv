@@ -5,20 +5,15 @@ using namespace std;
 using namespace cv;
 
 int main(int argc, char** argv) {
-  Mat src = imread("/Users/apple/Downloads/111.jpeg");
+  Mat src = imread("/Users/apple/Downloads/111.png");
   if (src.empty()){
     cout << "could not open image..." << endl;
     return -1;
   }
 
-  imshow("show", src);
-
   QuickDemo qd;
-
-  qd.color_space_demo(src);
-
-  waitKey(0);
-  destroyAllWindows();
+  //qd.color_space_demo(src);
+  qd.mat_creation_demo(src);
 
   return 0;
 }
