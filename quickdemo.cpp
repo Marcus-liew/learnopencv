@@ -155,28 +155,40 @@ void QuickDemo::operation_opencv_api_demo(Mat &image) {
   destroyAllWindows();
 }
 
-// ------ 通过滚动条实现调整图像亮度，采用tracking bar ------
-// ------ 回调函数 ------
-Mat m, dst, tmp;
-int lightness = 50;
-static void on_track(int, void*){
-  m = Scalar(lightness, lightness, lightness);
-  add(tmp, m, dst);
-  imshow("original", tmp);
-  imshow("亮度调整", dst);
+// ------ 通过滚动条实现调整图像亮度 对比度的调整 ------
+// ------ 亮度回调函数 ------
+static void on_lightness(int b, void* userdata){
+  Mat image = *((Mat*)userdata);
+  Mat dst = Mat::zeros(image.size(), image.type());
+  Mat m = Mat::zeros(image.size(), image.type());
+  m = Scalar(b, b, b);
+  addWeighted(image, 1.0, m, 0, b, dst);
 
-  waitKey(0);
-  destroyAllWindows();
+  //imshow("original", image);
+  imshow("亮度与对比度调整", dst);
 }
+// ------ 对比度回调函数 ------
+static void on_contrast(int b, void* userdata){
+  Mat image = *((Mat*)userdata);
+  Mat dst = Mat::zeros(image.size(), image.type());
+  Mat m = Mat::zeros(image.size(), image.type());
+  m = Scalar(b, b, b);
+  double contrast = b / 100.0;
+  addWeighted(image, contrast, m, 0.0, 0, dst);
 
+  //imshow("original", image);
+  imshow("亮度与对比度调整", dst);
+}
+// ------ Track Bar ------
 void QuickDemo::tracking_bar_demo(Mat &image){
-  namedWindow("亮度调整", WINDOW_AUTOSIZE);
-  dst = Mat::zeros(image.size(), image.type());
-  m = Mat::zeros(image.size(), image.type());
-  tmp = image;
-  //int max_value = 100;
+  namedWindow("亮度与对比度调整", WINDOW_AUTOSIZE);
+  int lightness = 50;
+  int lightness_max_value = 100;
+  int contrast_value = 100;
+  int contrast_max_value = 200;
 
-  createTrackbar("lightness_bar", "亮度调整", &lightness, 100, on_track);
-  //setTrackbarPos("lightness_bar", "亮度调整", lightness);
-  on_track(50, 0);
+  createTrackbar("lightness_bar", "亮度与对比度调整", &lightness, lightness_max_value, on_lightness, (void*)(&image));
+  createTrackbar("contrast_bar", "亮度与对比度调整", &contrast_value, contrast_max_value, on_contrast, (void*)(&image));
+
+  on_lightness(50, &image);
 }

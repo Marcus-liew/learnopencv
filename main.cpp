@@ -5,7 +5,7 @@ using namespace std;
 using namespace cv;
 
 int main(int argc, char* argv[]) {
-  Mat src = imread("/Users/apple/Downloads/111.png");
+  Mat src = imread("/Users/apple/Downloads/222.jpeg");
   if (src.empty()){
     cout << "could not open image..." << endl;
     return -1;
@@ -31,5 +31,7 @@ int main(int argc, char* argv[]) {
   qd.tracking_bar_demo(src);
 
 
+  waitKey(0);
+  destroyAllWindows();
   return 0;
 }
