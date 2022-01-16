@@ -22,8 +22,9 @@ int main(int argc, char** argv) {
   // ------ 调用创建图像成员函数 ------
   //qd.mat_creation_demo(src);
   // ------ 调用读写像素成员函数 ------
-  qd.pixel_visit_demo(src);
-
+  //qd.pixel_visit_demo(src);
+  // ------ 调用操作像素成员函数 ------
+  qd.operation_demo(src);
 
   return 0;
 }

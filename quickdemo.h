@@ -16,6 +16,8 @@ class QuickDemo{
   static void mat_creation_demo(Mat &image);
   // ------ 像素读写 ------
   static void pixel_visit_demo(Mat &image);
+  // ------ 像素操作 ------
+  static void operation_demo(Mat &image);
 };
 
 
