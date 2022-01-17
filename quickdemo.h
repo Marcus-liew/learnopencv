@@ -22,6 +22,8 @@ class QuickDemo{
   static void operation_opencv_api_demo(Mat &image);
   // ------ 通过滚动条实现调整图像亮度，采用tracking bar ------
   static void tracking_bar_demo(Mat &image);
+  // ------ 响应键盘事件 ------
+  static void key_demo(Mat &image);
 };
 
 

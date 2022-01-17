@@ -28,7 +28,10 @@ int main(int argc, char* argv[]) {
   // ------ 调用操作像素opencv api函数 ------
   //qd.operation_opencv_api_demo(src);
   // ------ 通过滚动条实现调整图像亮度和对比度 ------
-  qd.tracking_bar_demo(src);
+  //qd.tracking_bar_demo(src);
+  // ------ 捕捉键盘事件 ------
+  qd.key_demo(src);
+
 
   // ------ 销毁窗口 ------
   waitKey(0);

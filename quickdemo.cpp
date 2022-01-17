@@ -177,3 +177,14 @@ void QuickDemo::tracking_bar_demo(Mat &image){
 
   on_lightness(50, &image);
 }
+
+
+void QuickDemo::key_demo(Mat &image) {
+  int c;
+  while (true){
+    c= waitKey(100);
+    cout << c << endl;
+    if (c == 27) break;
+  }
+
+}
