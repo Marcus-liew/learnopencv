@@ -20,9 +20,9 @@ void QuickDemo::color_space_demo(Mat &image){
   imshow("原始图像BGR->HSV", hsv);
   imshow("原始图像BGR->GRAY", gray);
   // ------ 保存图片 ------
-  imwrite("/Users/apple/Desktop/bgr2hsv.png", hsv);
-  imwrite("/Users/apple/Desktop/bgr2gray.png", gray);
-  imwrite("/Users/apple/Desktop/bgr.png", image);
+  //imwrite("/Users/apple/Desktop/bgr2hsv.png", hsv);
+  //imwrite("/Users/apple/Desktop/bgr2gray.png", gray);
+  //imwrite("/Users/apple/Desktop/bgr.png", image);
 }
 
 // ------ 创建图像 ------

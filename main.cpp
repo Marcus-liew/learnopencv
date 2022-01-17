@@ -5,7 +5,7 @@ using namespace std;
 using namespace cv;
 
 int main(int argc, char* argv[]) {
-  Mat src = imread("/Users/apple/Downloads/222.jpeg");
+  Mat src = imread("/Users/marcus/Downloads/111.png");
   if (src.empty()){
     cout << "could not open image..." << endl;
     return -1;
